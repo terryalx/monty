@@ -63,6 +63,7 @@ void usage_error(void);
 
 /* functions */
 void _add_to_top(stack_t **stack, unsigned int line_number);
+void _free_stack(stack_t *stack);
 
 void execute(char *argv);
 int get_opc(stack_t **stack, char *arg, char *val, int line_number);
@@ -80,7 +81,7 @@ void mod(stack_t **stack, unsigned int line_number);
 int check_push(char *token);
 int get_value(char *token);
 char get_token(char *op, char *token);
-void _free(stack_t *stack);
+
 void clean_stack(stack_t **stack);
 
 

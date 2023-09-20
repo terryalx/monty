@@ -1,9 +1,10 @@
 #include "monty.h"
 
 /**
- * createNode - creates a new node
- * @n: the value of the node
- * Return: new node
+ * createNode - Creates a new node with the given value.
+ * @n: The value of the new node.
+ *
+ * Return: A pointer to the newly created node.
  */
 stack_t *createNode(int n)
 {

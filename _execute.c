@@ -3,8 +3,13 @@
 cmd_t cmd = {NULL, NULL};
 
 /**
- *execute - reads the file and executes the monty byte
- *@argv: argument vector
+ * execute - Read the file and execute the Monty bytecode.
+ * @argv: The filename containing Monty bytecode.
+ *
+ * Description:
+ * This function reads the Monty bytecode file line by line, tokenizes each
+ * line, and interprets the Monty instructions. It maintains a stack to
+ * execute push, pop, and other stack-related operations.
  */
 void execute(char *argv)
 {
@@ -29,11 +34,10 @@ void execute(char *argv)
 				continue;
 			val = strtok(NULL, " \n\t\r");
 			r = get_opc(&stack, token, val, c_line);
-			if (r == 1) /* get_opt return 1 when the value is not digit */
-				push_error(cmd.fd, cmd.line, stack, c_line); /** print push error*/
-			else if (r == -1) /* get_opt return -1 if not the instruction */
+			if (r == 1)
+				push_error(cmd.fd, cmd.line, stack, c_line);
+			else if (r == -1)
 				instr_error(cmd.fd, cmd.line, stack, token, c_line);
-					/*print instruction error*/
 		}
 		free(cmd.line);
 		_free(stack);
@@ -41,8 +45,6 @@ void execute(char *argv)
 	}
 	else
 	{
-
 		open_error(argv);
-
 	}
 }
