@@ -86,6 +86,6 @@ void clean_stack(stack_t **stack);
 
 
 
-int _isdigit(char *c);
+int _is_digit(char *c);
 stack_t *createNode(int n);
 #endif

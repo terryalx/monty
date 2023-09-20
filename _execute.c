@@ -33,11 +33,11 @@ void execute(char *argv)
 			else if (*token == '#')
 				continue;
 			val = strtok(NULL, " \n\t\r");
-			r = get_opc(&stack, token, val, c_line);
+			r = _get_(&stack, token, val, c_line);
 			if (r == 1)
 				push_error(cmd.fd, cmd.line, stack, c_line);
 			else if (r == -1)
-				instr_error(cmd.fd, cmd.line, stack, token, c_line);
+				_unknown_error(cmd.fd, cmd.line, stack, token, c_line);
 		}
 		free(cmd.line);
 		_free_stack(stack);

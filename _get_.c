@@ -38,7 +38,7 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 		{
 			if (!strcmp(arg, "push"))
 			{
-				if (_isdigit(val) == 1)
+				if (_is_digit(val) == 1)
 					value = atoi(val);
 				else
 					return (1);
