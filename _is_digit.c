@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _isdigit - Check if a string represents a valid integer.
+ * _is_digit - Check if a string represents a valid integer.
  * @c: The input string.
  *
  * Return:

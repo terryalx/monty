@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * divide - Divides the second top element of the stack by the top element.
+ * _divide_element - Divides the second top element of the stack by the top element.
  * @stack: Double pointer to the head of the stack.
  * @line_number: The line number where the division operation is called.
  *
@@ -12,7 +12,7 @@
  * If the stack is too short or if the top element is zero, an error message is
  * printed, and the program exits with a failure status.
  */
-void divide(stack_t **stack, unsigned int line_number)
+void _divide_element(stack_t **stack, unsigned int line_number)
 {
 	stack_t *val = NULL;
 	int quotient = 0;

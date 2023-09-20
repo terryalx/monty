@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _free - Free the stack and all its elements.
+ * _free_stack - Free the stack and all its elements.
  * @stack: Pointer to the head of the stack.
  *
  * Description:
@@ -16,7 +16,7 @@ void _free_stack(stack_t *stack)
 
 	if (list != NULL)
 	{
-		_free_stack(list->next); /* Recursively free the rest of the stack */
-		free(list); /* Free the current node */
+		_free_stack(list->next);
+		free(list);
 	}
 }

@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * get_opc - Get the opcode function associated with the command.
+ * _get_ - Get the opcode function associated with the command.
  * @stack: Pointer to the stack.
  * @arg: The command (opcode).
  * @val: The value (argument).
@@ -25,9 +25,9 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 		{"swap", swap},
 		{"add", _add_to_top},
 		{"sub", sub},
-		{"div", divide},
-		{"mul", mul},
-		{"mod", mod},
+		{"div", _divide_element},
+		{"mul", _mult_second_top},
+		{"mod", _mod_second_top},
 		{"pchar", pchar},
 		{NULL, NULL}
 	};
