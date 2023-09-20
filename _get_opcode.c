@@ -19,7 +19,7 @@ int get_opc(stack_t **stack, char *arg, char *val, int line_number)
 		{"pop", pop},
 		{"nop", nop},
 		{"swap", swap},
-		{"add", add},
+		{"add", _add_to_top},
 		{"sub", sub},
 		{"div", divide},
 		{"mul", mul},
