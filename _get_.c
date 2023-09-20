@@ -18,10 +18,10 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 
 	instruction_t op[] = {
 		{"push", push},
-		{"pall", pall},
+		{"pall", _pall},
 		{"pint", pint},
 		{"pop", pop},
-		{"nop", nop},
+		{"nop", _to},
 		{"swap", swap},
 		{"add", _add_to_top},
 		{"sub", sub},

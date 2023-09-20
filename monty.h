@@ -56,7 +56,7 @@ typedef struct instruction_s
 } instruction_t;
 
 /* error */
-void open_error(char *file);
+void _file_error(char *file);
 void push_error(FILE *fd, char *line, stack_t *stack, int line_number);
 void usage_error(void);
 
@@ -68,10 +68,10 @@ void _unknown_error(FILE *fd, char *line, stack_t *stack, char *val, int line_nu
 void execute(char *argv);
 int _get_(stack_t **stack, char *arg, char *val, int line_number);
 void push(stack_t **stack, unsigned int line_number);
-void pall(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
-void nop(stack_t **stack, unsigned int line_number);
+void _to(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
