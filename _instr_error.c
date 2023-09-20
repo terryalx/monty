@@ -13,6 +13,6 @@ void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_n)
 	fprintf(stderr, "L%u: unknown instruction %s\n", line_n, val);
 	fclose(fd);
 	free(line);
-	_free(stack);
+	_free_stack(stack);
 	exit(EXIT_FAILURE);
 }

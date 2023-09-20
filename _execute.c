@@ -40,7 +40,7 @@ void execute(char *argv)
 				instr_error(cmd.fd, cmd.line, stack, token, c_line);
 		}
 		free(cmd.line);
-		_free(stack);
+		_free_stack(stack);
 		fclose(cmd.fd);
 	}
 	else

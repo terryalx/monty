@@ -16,7 +16,7 @@ void _free_stack(stack_t *stack)
 
 	if (list != NULL)
 	{
-		_free(list->next); /* Recursively free the rest of the stack */
+		_free_stack(list->next); /* Recursively free the rest of the stack */
 		free(list); /* Free the current node */
 	}
 }
