@@ -41,6 +41,11 @@ typedef struct instruction_s
 } instruction_t;
 /** our functions **/
 char **tokenizer(char *buffer);
+#include <stdio.h>
+#include <stdlib.h>
+#include <stddef.h>
+#include <string.h>
+
 
 
 #endif /* MONTY */
