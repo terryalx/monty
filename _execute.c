@@ -45,6 +45,6 @@ void execute(char *argv)
 	}
 	else
 	{
-		open_error(argv);
+		_file_error(argv);
 	}
 }
