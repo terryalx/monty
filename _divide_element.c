@@ -33,6 +33,6 @@ void _divide_element(stack_t **stack, unsigned int line_number)
 
 	val = (*stack)->next;
 	quotient = val->n / (*stack)->n;
-	pop(stack, line_number);
+	_pop(stack, line_number);
 	val->n = quotient;
 }

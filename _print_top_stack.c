@@ -14,7 +14,7 @@ void _print_top_stack(stack_t **stack, unsigned int line_number)
 	if (!*stack || !stack)
 	{
 		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-		clean_stack(stack);
+		_free_all_node(stack);
 		exit(EXIT_FAILURE);
 	}
 	else

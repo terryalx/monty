@@ -26,6 +26,6 @@ void _subtract_top(stack_t **stack, unsigned int line_number)
 	}
 	val = (*stack)->next;
 	difference = val->n - (*stack)->n;
-	pop(stack, line_number);
+	_pop(stack, line_number);
 	val->n = difference;
 }

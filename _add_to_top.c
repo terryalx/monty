@@ -23,6 +23,6 @@ void _add_to_top(stack_t **stack, unsigned int line_number)
 	val = (*stack)->next;
 	sum = (*stack)->n;
 	sum += (*stack)->next->n;
-	pop(stack, line_number);
+	_pop(stack, line_number);
 	val->n = sum;
 }
