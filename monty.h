@@ -39,6 +39,8 @@ void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_n);
 
 /* functions */
 char **tokenizer(char *buffer);
+void _free(stack_t **stack);
+void clean_stack(stack_t **stack);
 void pop(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
