@@ -5,7 +5,6 @@
  * Return: 0 or 1
  * @c: Value
  **/
-
 int _isdigit(char *c)
 {
 	char *tmp = c;
@@ -24,4 +23,3 @@ int _isdigit(char *c)
 	}
 	return (1);
 }
-
