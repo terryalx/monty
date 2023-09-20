@@ -57,8 +57,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* error */
 
-
+/* functions */
 void execute(char *argv);
 int get_opc(stack_t **stack, char *arg, char *val, int line_number);
 void push(stack_t **stack, unsigned int line_number);
