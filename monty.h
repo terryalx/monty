@@ -62,6 +62,8 @@ void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_numbe
 void usage_error(void);
 
 /* functions */
+void _add_to_top(stack_t **stack, unsigned int line_number)
+
 void execute(char *argv);
 int get_opc(stack_t **stack, char *arg, char *val, int line_number);
 void push(stack_t **stack, unsigned int line_number);
@@ -70,7 +72,6 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
-void add(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
 void divide(stack_t **stack, unsigned int line_number);

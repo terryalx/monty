@@ -1,11 +1,15 @@
 #include "monty.h"
 
 /**
- * add - adds the top two elements of the stack.
- * @stack: double pointer to the head of the stack
- * @line_number: the line number
+ * add - Adds the top two elements of the stack.
+ * @stack: Double pointer to the head of the stack.
+ * @line_number: The line number where the add operation is called.
+ *
+ * Description:
+ * This function adds the top two elements of the stack. The result is stored in
+ * the second element, and the first element is removed.
  */
-void add(stack_t **stack, unsigned int line_number)
+void _add_to_top(stack_t **stack, unsigned int line_number)
 {
 	stack_t *val = NULL;
 	int sum = 0;
