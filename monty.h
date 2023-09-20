@@ -62,7 +62,7 @@ void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_numbe
 void usage_error(void);
 
 /* functions */
-void _add_to_top(stack_t **stack, unsigned int line_number)
+void _add_to_top(stack_t **stack, unsigned int line_number);
 
 void execute(char *argv);
 int get_opc(stack_t **stack, char *arg, char *val, int line_number);
