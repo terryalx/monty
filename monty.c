@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "monty.h"
 
 /**
  * main - entry point
@@ -18,12 +18,14 @@ int main(int argc, char *argv[])
 
 	/* file path to open */
 	char *filepath = argv[1];
-	/* open file */
-	FILE *filetoopen = fopen();
 
+	/* open file */
+	FILE *file = fopen(filepath, "r");
+
+	/* check for file */
 	if (file == NULL)
 	{
-		fprintf(stderr, "Error: Can't open file %s\n", file);
+		fprintf(stderr, "Error: Can't open file %s\n", filepath);
 		exit(EXIT_FAILURE);
 	}
 
