@@ -1,14 +1,18 @@
 #include "monty.h"
 
 /**
- * get_opc - gets the opcode function
- * @stack: pointer to the stack or queue
- * @arg: the command
- * @val: the value
- * @line_number: the line number
- * Return: 0 on success || 1 if not a digit || -1 on error
+ * get_opc - Get the opcode function associated with the command.
+ * @stack: Pointer to the stack.
+ * @arg: The command (opcode).
+ * @val: The value (argument).
+ * @line_number: The line number in the Monty bytecode file.
+ *
+ * Return:
+ * - 0 on success.
+ * - 1 if val is not a digit (for push).
+ * - -1 on error (if the opcode is not recognized).
  */
-int get_opc(stack_t **stack, char *arg, char *val, int line_number)
+int _get_(stack_t **stack, char *arg, char *val, int line_number)
 {
 	int i = 0;
 
@@ -37,7 +41,7 @@ int get_opc(stack_t **stack, char *arg, char *val, int line_number)
 				if (_isdigit(val) == 1)
 					value = atoi(val);
 				else
-					return (1);/** if not digit*/
+					return (1);
 			}
 			op[i].f(stack, (unsigned int)line_number);
 			break;
