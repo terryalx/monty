@@ -1,5 +1,7 @@
 #include "monty.h"
 
+int value;
+
 /**
  * push - pushes a new node with the given value to the stack
  * @stack: double pointer to the head of the stack
@@ -7,7 +9,6 @@
  */
 void push(stack_t **stack, unsigned int line_number)
 {
-    int value;
     
 	stack_t *new = NULL;
 	(void)line_number;
