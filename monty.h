@@ -8,8 +8,6 @@
 #include <stddef.h>
 #include <string.h>
 
-
-
 extern int info;
 
 /**
@@ -58,6 +56,10 @@ typedef struct instruction_s
 } instruction_t;
 
 /* error */
+void open_error(char *file);
+void push_error(FILE *fd, char *line, stack_t *stack, int line_number);
+void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
+void usage_error(void);
 
 /* functions */
 void execute(char *argv);
@@ -79,10 +81,9 @@ int get_value(char *token);
 char get_token(char *op, char *token);
 void _free(stack_t *stack);
 void clean_stack(stack_t **stack);
-void usage_error(void);
-void open_error(char *file);
-void push_error(FILE *fd, char *line, stack_t *stack, int line_number);
-void instr_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
+
+
+
 int _isdigit(char *c);
 stack_t *createNode(int n);
 #endif
