@@ -1,15 +1,18 @@
 #include "monty.h"
 
-int value;
-
 /**
- * push - pushes a new node with the given value to the stack
- * @stack: double pointer to the head of the stack
- * @line_number: value to be pushed
+ * _push - Pushes a new node with the given value onto the stack.
+ * @stack: Double pointer to the head of the stack.
+ * @line_number: The line number where the push operation is called.
+ *
+ * Description:
+ * This function pushes a new node with the given value onto the stack.
+ * It creates a new node using the `createNode` function and adds it to
+ * the top of the stack. The `value` variable is used to determine the
+ * value to be pushed.
  */
-void push(stack_t **stack, unsigned int line_number)
+void _push(stack_t **stack, unsigned int line_number)
 {
-    
 	stack_t *new = NULL;
 	(void)line_number;
 

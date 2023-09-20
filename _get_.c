@@ -19,7 +19,7 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 	instruction_t op[] = {
 		{"push", push},
 		{"pall", _pall},
-		{"pint", pint},
+		{"pint", _print_top_stack},
 		{"pop", pop},
 		{"nop", _to},
 		{"swap", swap},
@@ -28,7 +28,7 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 		{"div", _divide_element},
 		{"mul", _mult_second_top},
 		{"mod", _mod_second_top},
-		{"pchar", pchar},
+		{"pchar", _print_top_ASCII},
 		{NULL, NULL}
 	};
 

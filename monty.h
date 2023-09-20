@@ -57,7 +57,7 @@ typedef struct instruction_s
 
 /* error */
 void _file_error(char *file);
-void push_error(FILE *fd, char *line, stack_t *stack, int line_number);
+void _push_error(FILE *fd, char *line, stack_t *stack, int line_number);
 void usage_error(void);
 
 /* functions */
@@ -67,14 +67,14 @@ void _unknown_error(FILE *fd, char *line, stack_t *stack, char *val, int line_nu
 
 void execute(char *argv);
 int _get_(stack_t **stack, char *arg, char *val, int line_number);
-void push(stack_t **stack, unsigned int line_number);
+void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
-void pint(stack_t **stack, unsigned int line_number);
+void _print_top_stack(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void _to(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
-void pchar(stack_t **stack, unsigned int line_number);
+void _print_top_ASCII(stack_t **stack, unsigned int line_number);
 void _divide_element(stack_t **stack, unsigned int line_number);
 void _mult_second_top(stack_t **stack, unsigned int line_number);
 void _mod_second_top(stack_t **stack, unsigned int line_number);
