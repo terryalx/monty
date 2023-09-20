@@ -1,7 +1,5 @@
 #include "monty.h"
 
-#include "monty.h"
-
 /**
  * _isdigit - checks if it is a digit
  * Return: 0 or 1
@@ -26,3 +24,4 @@ int _isdigit(char *c)
 	}
 	return (1);
 }
+
