@@ -35,7 +35,7 @@ void execute(char *argv)
 			val = strtok(NULL, " \n\t\r");
 			r = _get_(&stack, token, val, c_line);
 			if (r == 1)
-				push_error(cmd.fd, cmd.line, stack, c_line);
+				_push_error(cmd.fd, cmd.line, stack, c_line);
 			else if (r == -1)
 				_unknown_error(cmd.fd, cmd.line, stack, token, c_line);
 		}

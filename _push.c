@@ -1,5 +1,7 @@
 #include "monty.h"
 
+int value;
+
 /**
  * _push - Pushes a new node with the given value onto the stack.
  * @stack: Double pointer to the head of the stack.

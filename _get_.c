@@ -17,7 +17,7 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 	int i = 0;
 
 	instruction_t op[] = {
-		{"push", push},
+		{"push", _push},
 		{"pall", _pall},
 		{"pint", _print_top_stack},
 		{"pop", pop},
