@@ -11,9 +11,9 @@ int main(int argc, char **argv)
 	if (argc != 2)
 	{
 		/**
-		 * usage_error - Print usage error message.
+		 * _usage_error - Print usage error message.
 		 */
-		usage_error();
+		_usage_error();
 	}
 	else
 	{

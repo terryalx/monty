@@ -58,34 +58,31 @@ typedef struct instruction_s
 /* error */
 void _file_error(char *file);
 void _push_error(FILE *fd, char *line, stack_t *stack, int line_number);
-void usage_error(void);
+void _usage_error(void);
+void _unknown_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
+
 
 /* functions */
 void _add_to_top(stack_t **stack, unsigned int line_number);
 void _free_stack(stack_t *stack);
-void _unknown_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
+void _push(stack_t **stack, unsigned int line_number);
+void _pall(stack_t **stack, unsigned int line_number);
+
 
 void execute(char *argv);
 int _get_(stack_t **stack, char *arg, char *val, int line_number);
-void _push(stack_t **stack, unsigned int line_number);
-void _pall(stack_t **stack, unsigned int line_number);
+
 void _print_top_stack(stack_t **stack, unsigned int line_number);
-void pop(stack_t **stack, unsigned int line_number);
+void _pop(stack_t **stack, unsigned int line_number);
 void _to(stack_t **stack, unsigned int line_number);
-void swap(stack_t **stack, unsigned int line_number);
-void sub(stack_t **stack, unsigned int line_number);
+void _swap_element(stack_t **stack, unsigned int line_number);
+void _subtract_top(stack_t **stack, unsigned int line_number);
 void _print_top_ASCII(stack_t **stack, unsigned int line_number);
 void _divide_element(stack_t **stack, unsigned int line_number);
 void _mult_second_top(stack_t **stack, unsigned int line_number);
 void _mod_second_top(stack_t **stack, unsigned int line_number);
-int check_push(char *token);
-int get_value(char *token);
-char get_token(char *op, char *token);
-
-void clean_stack(stack_t **stack);
-
-
-
+void _free_all_node(stack_t **stack);
 int _is_digit(char *c);
 stack_t *createNode(int n);
-#endif
+
+#endif /* _MONTY_H_ */
