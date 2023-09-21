@@ -12,9 +12,10 @@
  */
 void _swap_element(stack_t **stack, unsigned int line_number)
 {
-	stack_t *val;
-	int tmp = 0;
 
+	int tmp;
+
+	stack_t *val;
 	val = *stack;
 	if (val == NULL || val->next == NULL)
 	{
@@ -22,10 +23,8 @@ void _swap_element(stack_t **stack, unsigned int line_number)
 		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	else
-	{
-		tmp = val->n;
-		val->n = val->next->n;
-		val->next->n = tmp;
-	}
+	tmp = val->n;
+	val->n = val->next->n;
+	val->next->n = tmp;
 }
+

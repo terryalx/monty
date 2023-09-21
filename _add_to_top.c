@@ -11,18 +11,19 @@
  */
 void _add_to_top(stack_t **stack, unsigned int line_number)
 {
-	stack_t *val = NULL;
-	int sum = 0;
+	int sum;
+	stack_t *temp;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	val = (*stack)->next;
-	sum = (*stack)->n;
-	sum += (*stack)->next->n;
+
+	temp = (*stack)->next;
+	sum = (*stack)->n + temp->n;
 	_pop(stack, line_number);
-	val->n = sum;
+	temp->n = sum;
 }
+

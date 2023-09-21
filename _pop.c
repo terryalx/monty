@@ -14,18 +14,19 @@ void _pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *temp;
 
-	if (!*stack)
+	if (!stack || !*stack)
 	{
 		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	else
+
+	temp = (*stack)->next;
+	free(*stack);
+	if (temp)
 	{
-		temp = (*stack)->next;
-		free(*stack);
-		if (temp)
-			temp->prev = NULL;
-		*stack = temp;
+		temp->prev = NULL;
 	}
+	*stack = temp;
 }
+
