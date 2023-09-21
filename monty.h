@@ -86,4 +86,7 @@ void _free_all_node(stack_t **stack);
 int _is_digit(char *c);
 stack_t *createNode(int n);
 
+void rotr(stack_t **stack, unsigned int line_number);
+size_t len(const stack_t *h);
+
 #endif /* _MONTY_H_ */
