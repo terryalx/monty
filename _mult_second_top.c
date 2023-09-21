@@ -15,18 +15,19 @@
  */
 void _mult_second_top(stack_t **stack, unsigned int line_number)
 {
-	stack_t *val = NULL;
-	int product = 0;
+	stack_t *temp;
+	int product;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
-	val = (*stack)->next;
-	product = val->n * (*stack)->n;
+	temp = (*stack)->next;
+	product = temp->n * (*stack)->n;
 	_pop(stack, line_number);
-	val->n = product;
+	temp->n = product;
 }
+

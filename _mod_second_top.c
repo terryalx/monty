@@ -16,16 +16,17 @@
  */
 void _mod_second_top(stack_t **stack, unsigned int line_number)
 {
-	stack_t *val = NULL;
-	int remainder = 0;
+	stack_t *temp;
+	int remainder;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 
+	temp = (*stack)->next;
 	if ((*stack)->n == 0)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
@@ -33,8 +34,8 @@ void _mod_second_top(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 
-	val = (*stack)->next;
-	remainder = val->n % (*stack)->n;
+	remainder = temp->n % (*stack)->n;
 	_pop(stack, line_number);
-	val->n = remainder;
+	temp->n = remainder;
 }
+
