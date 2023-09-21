@@ -1,47 +1,33 @@
 #include "monty.h"
 
 /**
- * main - entry point for the program
- * @argc: argument counter
- * @argv: entry argument vector
- * Return: success || failure || message
+ * main - Entry point for Monty interpreter.
+ * @argc: Argument counter.
+ * @argv: Argument vector containing the filename.
+ *
+ * Return: EXIT_SUCCESS if successful, EXIT_FAILURE on failure.
  */
-
 int main(int argc, char **argv)
 {
-	char **tokens = NULL;
-	stack_t *head = NULL;
-	char *buffer = NULL;
-	FILE *fp;
-	size_t n;
-	unsigned int line_number;
-	
-	line_number = 0;
+	int value = 2;
 
-	switch (argc)
+	if (argc != value)
 	{
-		case 2:
-			/* read the file and execute */
-			/*execute(argv[1]);*/
-			break;
-		default:
-			/* print usage error */
-			usage_error();
-			break;
+		/**
+		 * _usage_error - Print usage error message.
+		 */
+		_print_usage_error();
 	}
-	while ((getline(&buffer, &n, fp)) != -1)
+	else
 	{
-		line_number++;
-		tokens = tokenizer(buffer);
-		if (tokens)
-		{
-			free(tokens);
-		}
+		/**
+		 * execute - Read the Monty bytecode file and execute the commands.
+		 * @argv: The filename containing Monty bytecode.
+		 *
+		 * Return: EXIT_SUCCESS if successful, EXIT_FAILURE on failure.
+		 */
+		_tokenizer(argv[1]);
 	}
-	free(buffer);
-	/*clean_stack(&head);*/
-	fclose(fp);
 
 	return (EXIT_SUCCESS);
 }
-
