@@ -1,7 +1,7 @@
 #include "monty.h"
 
 /**
- * _to - Does nothing.
+ * nop - Does nothing.
  * @stack: Double pointer to the head of the stack (unused).
  * @line_number: The current line number (unused).
  *
@@ -9,7 +9,7 @@
  * This function is a placeholder that does nothing. It's often used in Monty
  * programs as an instruction that has no effect.
  */
-void _to(stack_t **stack, unsigned int line_number)
+void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;

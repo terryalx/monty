@@ -75,7 +75,7 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number);
 
 void _print_top_stack(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
-void _to(stack_t **stack, unsigned int line_number);
+void nop(stack_t **stack, unsigned int line_number);
 void _swap_element(stack_t **stack, unsigned int line_number);
 void _subtract_top(stack_t **stack, unsigned int line_number);
 void _print_top_ASCII(stack_t **stack, unsigned int line_number);
