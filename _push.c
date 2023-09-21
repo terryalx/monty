@@ -22,7 +22,7 @@ void _push(stack_t **stack, unsigned int line_number)
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 
 	new_node->next = *stack;

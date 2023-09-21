@@ -19,5 +19,5 @@ void _unknown_error(FILE *fd, char *line, stack_t *stack, char *val, int line_n)
 	fclose(fd);
 	free(line);
 	_free_stack(stack);
-	exit(EXIT_FAILURE);
+	FAIL;
 }

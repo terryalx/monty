@@ -31,7 +31,7 @@ void _divide_element(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 		_free_stack(*stack);
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 
 	temp = (*stack)->next;
@@ -39,7 +39,7 @@ void _divide_element(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		_free_stack(*stack);
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 
 	quotient = temp->n / (*stack)->n;

@@ -18,5 +18,5 @@ void _push_error(FILE *fd, char *line, stack_t *stack, int line_number)
 	fclose(fd);
 	free(line);
 	_free_stack(stack);
-	exit(EXIT_FAILURE);
+	FAIL;
 }

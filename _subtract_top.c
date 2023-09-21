@@ -22,7 +22,7 @@ void _subtract_top(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		_free_stack(*stack);
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 
 	temp = (*stack)->next;

@@ -23,7 +23,7 @@ void _mod_second_top(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 		_free_stack(*stack);
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 
 	temp = (*stack)->next;
@@ -31,7 +31,7 @@ void _mod_second_top(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%u: division by zero\n", line_number);
 		_free_stack(*stack);
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 
 	remainder = temp->n % (*stack)->n;

@@ -9,7 +9,6 @@
 #include <string.h>
 
 #define FAIL (exit(EXIT_FAILURE))
-#define PASS (exit(EXIT_SUCCESS))
 
 /**
  * struct cmd_s - command_info

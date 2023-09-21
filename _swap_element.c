@@ -21,7 +21,7 @@ void _swap_element(stack_t **stack, unsigned int line_number)
 	{
 		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		_free_stack(*stack);
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 	tmp = val->n;
 	val->n = val->next->n;

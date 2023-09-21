@@ -11,5 +11,5 @@
 void _print_usage_error(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
-	exit(EXIT_FAILURE);
+	FAIL;
 }

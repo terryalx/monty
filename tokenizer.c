@@ -20,7 +20,7 @@ char **tokenizer(char *buffer)
 	{
 		fprintf(stderr, "Error: malloc failed");
 		free(buffer);
-		exit(EXIT_FAILURE);
+		FAIL;
 	}
 
 	token = strtok(buffer, delim);
