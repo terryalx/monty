@@ -1,9 +1,9 @@
 #include "monty.h"
 
-cmd_t cmd = {NULL, NULL};
+cmd_t command_info = {NULL, NULL};
 
 /**
- * execute - Read the file and execute the Monty bytecode.
+ * _tokenizer - Read the file and execute the Monty bytecode.
  * @argv: The filename containing Monty bytecode.
  *
  * Description:
@@ -11,20 +11,20 @@ cmd_t cmd = {NULL, NULL};
  * line, and interprets the Monty instructions. It maintains a stack to
  * execute push, pop, and other stack-related operations.
  */
-void execute(char *argv)
+void _tokenizer(char *argv)
 {
 	int c_line = 0, r = 0;
 	size_t bufsize = 0;
 	char *token = NULL, *val = NULL;
 	stack_t *stack = NULL;
 
-	cmd.fd = fopen(argv, "r");
-	if (cmd.fd)
+	command_info.file_descriptor = fopen(argv, "r");
+	if (command_info.file_descriptor)
 	{
-		while (getline(&cmd.line, &bufsize, cmd.fd) != -1)
+		while (getline(&command_info.command_line, &bufsize, command_info.file_descriptor) != -1)
 		{
 			c_line++;
-			token = strtok(cmd.line, " \n\t\r");
+			token = strtok(command_info.command_line, " \n\t\r");
 			if (token == NULL)
 			{
 				free(token);
@@ -35,13 +35,13 @@ void execute(char *argv)
 			val = strtok(NULL, " \n\t\r");
 			r = _get_(&stack, token, val, c_line);
 			if (r == 1)
-				_push_error(cmd.fd, cmd.line, stack, c_line);
+				_push_error(command_info.file_descriptor, command_info.command_line, stack, c_line);
 			else if (r == -1)
-				_unknown_error(cmd.fd, cmd.line, stack, token, c_line);
+				_unknown_error(command_info.file_descriptor, command_info.command_line, stack, token, c_line);
 		}
-		free(cmd.line);
+		free(command_info.command_line);
 		_free_stack(stack);
-		fclose(cmd.fd);
+		fclose(command_info.file_descriptor);
 	}
 	else
 	{

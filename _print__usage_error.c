@@ -8,7 +8,7 @@
  * program is not provided with the correct command-line arguments. It prints
  * a usage error message and exits with a failure status.
  */
-void _usage_error(void)
+void _print_usage_error(void)
 {
 	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);

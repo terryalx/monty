@@ -19,6 +19,6 @@ void _free_all_node(stack_t **stack)
 		*stack = (*stack)->next;
 		free(tmp);
 	}
-	fclose(cmd.fd);
-	free(cmd.line);
+	fclose(command_info.file_descriptor);
+	free(command_info.command_line);
 }

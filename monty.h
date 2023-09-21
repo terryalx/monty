@@ -8,21 +8,22 @@
 #include <stddef.h>
 #include <string.h>
 
-extern int info;
 
 /**
- * struct cmd_s - cmd
- * @fd: file descriptor
- * @line: line
+ * struct cmd_s - command_info
+ * @file_descriptor: file descriptor
+ * @command_line: line command
  */
-
-typedef struct cmd_s
-{
-	FILE *fd;
-	char *line;
+typedef struct cmd_s {
+    FILE *file_descriptor;
+    char *command_line;
 } cmd_t;
 
-extern cmd_t cmd;
+extern cmd_t command_info;
+
+
+/* extern */
+extern int numeric_value;
 extern int value;
 
 /**
@@ -58,7 +59,7 @@ typedef struct instruction_s
 /* error */
 void _file_error(char *file);
 void _push_error(FILE *fd, char *line, stack_t *stack, int line_number);
-void _usage_error(void);
+void _print_usage_error(void);
 void _unknown_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
 
 
@@ -69,7 +70,7 @@ void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
 
 
-void execute(char *argv);
+void _tokenizer(char *argv);
 int _get_(stack_t **stack, char *arg, char *val, int line_number);
 
 void _print_top_stack(stack_t **stack, unsigned int line_number);
