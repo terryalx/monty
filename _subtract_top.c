@@ -15,17 +15,19 @@
  */
 void _subtract_top(stack_t **stack, unsigned int line_number)
 {
-	stack_t *val = NULL;
-	int difference = 0;
+	int difference;
+	stack_t *temp;
 
-	if (!*stack || !(*stack)->next)
+	if (!stack || !*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-	val = (*stack)->next;
-	difference = val->n - (*stack)->n;
+
+	temp = (*stack)->next;
+	difference = temp->n - (*stack)->n;
 	_pop(stack, line_number);
-	val->n = difference;
+	temp->n = difference;
 }
+
