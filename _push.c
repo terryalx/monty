@@ -15,13 +15,20 @@ int value;
  */
 void _push(stack_t **stack, unsigned int line_number)
 {
-	stack_t *new = NULL;
+
+	stack_t *new_node = createNode(value);
 	(void)line_number;
 
-	new = createNode(value);
+	if (!new_node)
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		exit(EXIT_FAILURE);
+	}
 
-	new->next = *stack;
-	if (*stack != NULL)
-		(*stack)->prev = new;
-	*stack = new;
+	new_node->next = *stack;
+	if (*stack)
+		(*stack)->prev = new_node;
+
+	*stack = new_node;
 }
+
