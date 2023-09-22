@@ -1,18 +1,21 @@
 #include "monty.h"
 
 /**
- * _get_ - Get the opcode function associated with the command.
+ * _get_ - Get the opcode function associated
+ * with the command.
  * @stack: Pointer to the stack.
  * @arg: The command (opcode).
  * @val: The value (argument).
- * @line_number: The line number in the Monty bytecode file.
+ * @line_number: The line number in the Monty
+ * bytecode file.
  *
  * Return:
  * - 0 on success.
  * - 1 if val is not a digit (for push).
  * - -1 on error (if the opcode is not recognized).
  */
-int _get_(stack_t **stack, char *arg, char *val, int line_number)
+int _get_(stack_t **stack, char *arg,
+		char *val, int line_number)
 {
 	int i = 0;
 
@@ -56,3 +59,4 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 
 	return (0);
 }
+

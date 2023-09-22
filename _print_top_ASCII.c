@@ -1,16 +1,20 @@
 #include "monty.h"
 
 /**
- * _print_top_ASCII - Prints the character representation of the top element of the stack.
+ * _print_top_ASCII - Prints the character representation
+ * of the top element of the stack.
  * @stack: Double pointer to the head of the stack.
- * @line_number: The line number where the _print_top_ASCII operation is called.
+ * @line_number: The line number where the _print_top_ASCII
+ * operation is called.
  *
  * Description:
- * This function prints the character representation of the top element of the
- * stack. It checks if the stack is empty, if the top element is within the
- * valid ASCII range (0-127), and then prints the character.
+ * This function prints the character representation of
+ * the top element of the stack. It checks if the stack
+ * is empty, if the top element is within the valid ASCII
+ * range (0-127), and then prints the character.
  *
- * If the stack is empty or the top element is out of range, it prints an
+ * If the stack is empty or the top element is out of range,
+ * it prints an
  * error message and exits with a failure status.
  */
 void _print_top_ASCII(stack_t **stack, unsigned int line_number)
