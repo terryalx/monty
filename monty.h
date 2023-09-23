@@ -7,7 +7,6 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include <string.h>
-
 #define FAIL (exit(EXIT_FAILURE))
 
 /**
@@ -26,6 +25,7 @@ extern cmd_t command_info;
 /* extern */
 extern int numeric_value;
 extern int value;
+extern int format;/*case stack or queue, 0 for stack*/
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -63,14 +63,17 @@ void _push_error(FILE *fd, char *line, stack_t *stack, int line_number);
 void _print_usage_error(void);
 void _unknown_error(FILE *fd, char *line, stack_t *stack, char *val, int line_number);
 
+
 /* functions */
-stack_t *createNode(int n);
-int _get_(stack_t **stack, char *arg, char *val, int line_number);
 void _add_to_top(stack_t **stack, unsigned int line_number);
 void _free_stack(stack_t *stack);
 void _push(stack_t **stack, unsigned int line_number);
 void _pall(stack_t **stack, unsigned int line_number);
+
+
 void _tokenizer(char *argv);
+int _get_(stack_t **stack, char *arg, char *val, int line_number);
+
 void _print_top_stack(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
@@ -82,10 +85,11 @@ void _mult_second_top(stack_t **stack, unsigned int line_number);
 void _mod_second_top(stack_t **stack, unsigned int line_number);
 void _free_all_node(stack_t **stack);
 int _is_digit(char *c);
+stack_t *createNode(int n);
 void _pstr(stack_t **stack, unsigned int n);
 void _rotl(stack_t **stack, unsigned int n);
 void _rotr(stack_t **stack, unsigned int n);
-
-
+void _set_queue_format(stack_t **stack, unsigned int line_number);
+void _set_stack_format(stack_t **stack, unsigned int line_number);
 
 #endif /* _MONTY_H_ */

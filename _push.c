@@ -22,15 +22,31 @@ void _push(stack_t **stack, unsigned int line_number)
 	if (!new_node)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
-		FAIL;
+		exit(EXIT_FAILURE);
 	}
-
-	new_node->next = *stack;
-	if (*stack)
+	if (format == 0)
 	{
-		(*stack)->prev = new_node;
+		new_node->next = *stack;
+		if (*stack)
+		{
+			(*stack)->prev = new_node;
+		}
+		*stack = new_node;
 	}
-
-	*stack = new_node;
+	else /* was queue*/
+	{
+		stack_t *temp = *stack;
+		if (temp)
+		{
+			while (temp->next)
+				temp = temp->next;
+			temp->next = new_node;
+			new_node->prev = temp;
+		}
+		else
+		{
+			*stack = new_node;
+		}
+	}
 }
 
