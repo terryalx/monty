@@ -25,6 +25,7 @@ extern cmd_t command_info;
 /* extern */
 extern int numeric_value;
 extern int value;
+extern int format;/*case stack or queue, 0 for stack*/
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -88,4 +89,7 @@ stack_t *createNode(int n);
 void _pstr(stack_t **stack, unsigned int n);
 void _rotl(stack_t **stack, unsigned int n);
 void _rotr(stack_t **stack, unsigned int n);
+void _set_queue_format(stack_t **stack, unsigned int line_number);
+void _set_stack_format(stack_t **stack, unsigned int line_number);
+
 #endif /* _MONTY_H_ */

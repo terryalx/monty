@@ -23,7 +23,25 @@ void _add_to_top(stack_t **stack, unsigned int line_number)
 
 	temp = (*stack)->next;
 	sum = (*stack)->n + temp->n;
+	if (format == 1) /*Adding to queue*/
+	{
+		stack_t *new_node = malloc(sizeof(stack_t));
+		if (new_node == NULL)
+		{
+			fprintf(stderr, "Error: malloc failed\n");
+			_free_stack(*stack);
+			exit(EXIT_FAILURE);
+		}
+		new_node->n = sum;
+		new_node->prev = NULL;
+		new_node->next = *stack;
+		(*stack)->prev = new_node;
+		*stack = new_node;
+	}
+	else 
+	{
 	_pop(stack, line_number);
 	temp->n = sum;
+	}
 }
 

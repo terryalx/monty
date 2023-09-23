@@ -14,6 +14,7 @@
  */
 int _get_(stack_t **stack, char *arg, char *val, int line_number)
 {
+
 	int i = 0;
 
 	instruction_t op[] = {
@@ -32,6 +33,8 @@ int _get_(stack_t **stack, char *arg, char *val, int line_number)
 		{"pstr", _pstr},
 		{"rotl", _rotl},
 		{"rotr", _rotr},
+		{"queue", _set_queue_format},
+		{"stack", _set_stack_format},
 		{NULL, NULL}
 	};
 
