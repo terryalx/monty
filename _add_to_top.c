@@ -6,7 +6,8 @@
  * @line_number: The line number where the add operation is called.
  *
  * Description:
- * This function adds the top two elements of the stack. The result is stored in
+ * This function adds the top two elements of the stack.
+ * The result is stored in
  * the second element, and the first element is removed.
  */
 void _add_to_top(stack_t **stack, unsigned int line_number)
@@ -26,6 +27,7 @@ void _add_to_top(stack_t **stack, unsigned int line_number)
 	if (format == 1) /*Adding to queue*/
 	{
 		stack_t *new_node = malloc(sizeof(stack_t));
+
 		if (new_node == NULL)
 		{
 			fprintf(stderr, "Error: malloc failed\n");
@@ -38,7 +40,7 @@ void _add_to_top(stack_t **stack, unsigned int line_number)
 		(*stack)->prev = new_node;
 		*stack = new_node;
 	}
-	else 
+	else
 	{
 	_pop(stack, line_number);
 	temp->n = sum;
