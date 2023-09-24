@@ -21,8 +21,8 @@ void _set_stack_format(stack_t **stack, unsigned int line_number)
 void _set_queue_format(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
-
-	if (*stack)
+	(void)stack;
+	/*if (*stack)
 	{
 		stack_t *temp = *stack;
 		while (temp->next)
@@ -32,7 +32,7 @@ void _set_queue_format(stack_t **stack, unsigned int line_number)
 		(*stack) = (*stack)->next;
 		(*stack)->prev->next = NULL;
 		(*stack)->prev = NULL;
-	}
+	}*/
 
 	format = 1; /*Set data format to queue*/
 }

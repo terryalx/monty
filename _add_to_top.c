@@ -10,10 +10,11 @@
  * The result is stored in
  * the second element, and the first element is removed.
  */
+
 void _add_to_top(stack_t **stack, unsigned int line_number)
 {
 	int sum;
-	stack_t *temp;
+	stack_t *temp, *new_node, *first, *second;
 
 	if (!stack || !*stack || !(*stack)->next)
 	{
@@ -21,29 +22,29 @@ void _add_to_top(stack_t **stack, unsigned int line_number)
 		_free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
-
-	temp = (*stack)->next;
-	sum = (*stack)->n + temp->n;
-	if (format == 1) /*Adding to queue*/
+	sum = 0;
+	if (format == 1)
 	{
-		stack_t *new_node = malloc(sizeof(stack_t));
+		/*new_node = NULL*/;
 
-		if (new_node == NULL)
-		{
-			fprintf(stderr, "Error: malloc failed\n");
-			_free_stack(*stack);
-			exit(EXIT_FAILURE);
-		}
+		first = *stack;
+		second = first->next;
+
+		sum = first->n + second->n;
+		new_node = malloc(sizeof(stack_t));
 		new_node->n = sum;
-		new_node->prev = NULL;
-		new_node->next = *stack;
-		(*stack)->prev = new_node;
+
+		new_node->next = second;
+		second->prev = new_node;
 		*stack = new_node;
+
 	}
 	else
 	{
-	_pop(stack, line_number);
-	temp->n = sum;
+		temp = (*stack)->next;
+		sum = (*stack)->n + temp->n;
+		_pop(stack, line_number);
+		temp->n = sum;
 	}
+	format = 0;
 }
-
